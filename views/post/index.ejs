@@ -1,0 +1,46 @@
+<div ng-app="Post" ng-controller="PostCtrl">	
+	<h1>Hello Sails js</h1>	
+	<!-- <div class="alert alert-warning" ng-bind="message"></div> -->
+	<table class="table table-hover">
+		<tr>
+			<th>ID</th>
+			<th>UserName</th>
+			<th>Title</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-repeat="data in content">
+			<td ng-bind="data.id"></td>
+			<td>{{ data.user_id.username}}</td>
+			<td ng-bind="data.title"></td>
+			<td>
+				<a class="btn btn-success" ng-href="xem/{{ data.id }}">Xem</a>
+				<!-- <a class="btn btn-success" ng-href="xem/{{ data.id }}">Sữa</a> -->
+				<button class="btn btn-success" ng-click="edit()">Sữa</button>
+				<button class="btn btn-danger" ng-click="remove('{{ data.id }}')">Xóa</button>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<a href="/bai-viet/uploadfile" class="btn btn-success">Create new post</a>
+	<button ng-click="FBlogin()" class="btn btn-success">FB login</button>
+	<button ng-click="Gglogin()" class="btn btn-success">Google login</button>
+	<div>
+		<h2>{{ facebook.title }}</h2>
+		<h3>{{ facebook.username }}</h3>
+		<h3>{{ facebook.email }}</h3>
+		<img ng-src="{{ facebook.f_image }}" alt="">
+	</div>
+	<div>
+		<h2>{{ gmail.title }}</h2>
+		<h3>{{ gmail.username }}</h3>
+		<h3>{{ gmail.email }}</h3>
+		<img ng-src="{{ gmail.g_image }}" alt="">
+	</div>
+
+	<div ng-show="editorEnabled">
+      <input ng-model="editableTitle" ng-show="editorEnabled">
+      <a href="#" ng-click="save()">Save</a>
+      or
+      <a href="#" ng-click="disableEditor()">cancel</a>.
+    </div>
+</div>

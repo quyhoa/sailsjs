@@ -1,0 +1,24 @@
+<div ng-app="View" ng-controller="UserCtrl">
+	<h1>Detail View</h1>
+	<!-- <a href="" class="btn btn-success">Add image</a> -->
+	<div class="alert alert-warning" ng-bind="message" ng-click="myFunc()">
+	</div>
+	<table class="table table-hover">
+		<tr>
+			<th>ID</th>
+			<th>UserName</th>
+		</tr>
+		<tr ng-repeat="data in content">
+			<td ng-bind="data.id"></td>
+			<td>
+				<a ng-href="/xem/{{ data.id }}">{{ data.username }}</a>
+			</td>
+			<!-- <td ng-bind="data.username"></td> -->			
+		</tr>
+	</table>
+</div>
+<script>
+	$(document).ready(function(){
+	    $(".alert").delay(2000).fadeOut( 800 ).slideUp( 400 );
+	});
+</script>

@@ -1,0 +1,27 @@
+<div>
+	<h1>Thông tin chi tiết bài post</h1>
+	<table class="table table-hover">
+		<tr>
+			<td width="100px">Người đăng:</td>	
+			<td><%= user.username %></td>
+		</tr>
+		<tr>
+			<td>Tên bài:</td>	
+			<td><%= data.title %></td>
+		</tr>
+		<tr>
+			<td>image:</td>	
+			<td>
+				<img src="/images/<%= data.image %>" alt="<%= data.title %>" class="img-thumbnail" width="200">
+			</td>
+		</tr>
+		<tr>
+			<td>Nội dung:</td>	
+			<td><%= data.content %></td>
+		</tr>
+		<tr>
+			<td>Ngày đăng:</td>	
+			<td><%= data.createdAt %></td>
+		</tr>
+	</table>
+</div>
